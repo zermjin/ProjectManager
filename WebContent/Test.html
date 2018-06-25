@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+ function change(){
+	 
+	 
+	 var xmlhttp;
+	 xmlhttp = new XMLHttpRequest();
+	
+	 xmlhttp.onreadystatechange = function(){
+		
+		 if(xmlhttp.readyState== 4 &&xmlhttp.status ==200){
+			 document.getElementById("mydiv").innerHTML=xmlhttp.responseText;
+		 }
+	 }
+	 xmlhttp.open("GET","/Ajax/test.txt",true);
+	 xmlhttp.send();
+ }
+</script>
+</head>
+<body>
+<div id="mydiv">准备显示</div>
+<button type="button" onclick="change()">点击显示文本内容</button>
+
+
+
+</body>
+</html>
